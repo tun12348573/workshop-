@@ -6,9 +6,9 @@ chapter: false
 pre: " <b> 5.1. </b> "
 ---
 
-#### Introduction to AWS Serverless E-commerce Project
+#### Introduction to Mimi Jewelry E-commerce Project
 
-- **AWS Serverless E-commerce Project** is an online shopping website built using the serverless model on AWS. The project focuses on deploying an e-commerce application with essential features such as product browsing, login, cart management, order placement, online payment, order management, and product image upload.
+- **Mimi Jewelry E-commerce Project** is an online shopping website built using the serverless model on AWS. The project focuses on deploying an e-commerce application with essential features such as product browsing, login, cart management, order placement, online payment, order management, and product image upload.
 
 - The project architecture uses AWS managed services and serverless services to reduce manual server management. Instead of deploying the system on EC2 or managing servers manually, the project uses **Amazon S3, Amazon CloudFront, Amazon Cognito, Amazon API Gateway, AWS Lambda, Amazon DynamoDB, Amazon EventBridge, Amazon CloudWatch, Amazon SNS, AWS IAM, AWS SAM, and AWS CloudFormation**.
 
