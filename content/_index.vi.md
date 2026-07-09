@@ -1,6 +1,6 @@
 ---
 title: "Báo cáo thực tập"
-date: 2026-21-01
+date: 2026-17-04
 weight: 1
 chapter: false
 ---
@@ -27,7 +27,7 @@ chapter: false
 
 &emsp; **Thời gian thực tập:** Từ ngày 17/04/2026 đến ngày 10/07/2026
 
-(images/avatar.jpg)
+<img src="/workshop-/images/avatar.jpg" alt="Ảnh đại diện" style="max-width: 180px; height: auto; border-radius: 8px;">
 
 ### Nội dung báo cáo
 
