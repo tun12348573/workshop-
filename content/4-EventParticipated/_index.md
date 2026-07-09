@@ -29,15 +29,3 @@ During my internship, I participated in two events. Each one was a memorable exp
 &emsp;**Location:** 26th Floor, Bitexco Tower, 02 Hai Trieu Street, Saigon Ward, Ho Chi Minh City
 
 &emsp;**Role:** Attendee
-
----
-
-### [Event 3](4.3-Event3/)
-
-&emsp;**Event Name:** GenAI-powered App-DB Modernization workshop
-
-&emsp;**Date & Time:** 09:00, August 13, 2025
-
-&emsp;**Location:** 26th Floor, Bitexco Tower, 02 Hai Trieu Street, Saigon Ward, Ho Chi Minh City
-
-&emsp;**Role:** Attendee
