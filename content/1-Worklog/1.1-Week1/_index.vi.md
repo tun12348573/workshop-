@@ -1,6 +1,6 @@
 ---
 title: "Worklog Tuần 1"
-date: 2024-01-01
+date: 2026-04-17
 weight: 1
 chapter: false
 pre: " <b> 1.1. </b> "
@@ -17,20 +17,15 @@ pre: " <b> 1.1. </b> "
 | 6   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 17/04/2026   | 17/04/2026      | <https://000001.awsstudygroup.com/>                                                           |
 | 2   | - Tìm hiểu tổng quan về Cloud Computing, AWS là gì, lợi ích của việc triển khai hệ thống trên cloud và mô hình trả phí theo mức sử dụng.                                                    | 20/04/2026   | 20/04/2026      | <https://www.youtube.com/watch?v=HxYZAK1coOI&list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&index=4> |
 | 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 21/04/2026   | 21/04/2026      | <https://cloudjourney.awsstudygroup.com/>                                                     |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 22/04/2026   | 22/04/2026      | <https://cloudjourney.awsstudygroup.com/>                                                     |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP <br>                    | 23/04/2026   | 23/04/2026      | <https://cloudjourney.awsstudygroup.com/>                                                     |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 24/04/2026   | 24/04/2026      | <https://cloudjourney.awsstudygroup.com/>                                                     |
+| 4   | - Học các khái niệm cơ bản như Region, Availability Zone, IAM, Billing và cách theo dõi chi phí trên AWS.                                                                                   | 22/04/2026   | 22/04/2026      | <https://youtube.com/playlist?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&si=rP8aPThTzPERoEnu>    |
+| 5   | - So sánh mô hình triển khai truyền thống bằng server với mô hình serverless. Tìm hiểu vì sao serverless phù hợp với dự án web bán hàng.                                                    | 23/04/2026   | 23/04/2026      | <https://topdev.vn/blog/serverless-la-gi/>                                                    |
+| 6   | - Tìm hiểu cơ bản về IAM gồm User, Role, Policy và Permission. Ghi chú vai trò của IAM trong việc phân quyền giữa các dịch vụ AWS.                                                          | 24/04/2026   | 24/04/2026      | <https://aws.amazon.com/vi/iam/>                                                              |
 
 ### Kết quả đạt được tuần 1:
 
-- Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản:
-  - Compute
-  - Storage
-  - Networking
-  - Database
-  - ...
-
 - Đã tạo và cấu hình AWS Free Tier account thành công.
+
+- Nắm được kiến thức nền tảng về AWS và có định hướng ban đầu cho dự án thương mại điện tử triển khai theo mô hình serverless.
 
 - Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
 
