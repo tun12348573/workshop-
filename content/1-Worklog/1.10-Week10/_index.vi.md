@@ -1,56 +1,25 @@
 ---
 title: "Worklog Tuần 10"
-date: 2024-01-01
+date: 2026-06-2208
 weight: 10
 chapter: false
 pre: " <b> 1.10. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
 ### Mục tiêu tuần 10:
 
-- Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-- Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+- Hoàn thiện upload ảnh sản phẩm và tích hợp thanh toán ZaloPay.
 
 ### Các công việc cần triển khai trong tuần này:
 
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                            | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP <br>                    | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Thứ | Công việc                                                                                                                                                | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | -------------- |
+| 2   | - Tạo S3 Product Images Bucket riêng để lưu hình ảnh sản phẩm, tách biệt với bucket frontend.                                                            | 22/06/2026   | 22/06/2026      |
+| 3   | - Xây dựng API tạo presigned URL để trình duyệt admin có thể upload ảnh trực tiếp lên S3.                                                                | 23/06/2026   | 23/06/2026      |                |
+| 4   | - Tích hợp upload ảnh trong trang admin. Kiểm tra upload ảnh, lưu URL ảnh vào sản phẩm và hiển thị ảnh trên website.                                     | 24/06/2026   | 24/06/2026      |                |
+| 5   | - Tích hợp ZaloPay Sandbox. Tìm hiểu luồng tạo thanh toán, redirect người dùng và nhận callback.                                                         | 25/06/2026   | 25/06/2026      |                |
+| 6   | - Hoàn thiện luồng thanh toán cơ bản. Lambda tạo payment request, ZaloPay callback về API Gateway và Lambda cập nhật trạng thái đơn hàng trong DynamoDB. | 26/06/2026   | 26/06/2026      |                |
 
 ### Kết quả đạt được tuần 10:
 
-- Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản:
-  - Compute
-  - Storage
-  - Networking
-  - Database
-  - ...
-
-- Đã tạo và cấu hình AWS Free Tier account thành công.
-
-- Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-- Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  - Access Key
-  - Secret Key
-  - Region mặc định
-  - ...
-
-- Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-  - Kiểm tra thông tin tài khoản & cấu hình
-  - Lấy danh sách region
-  - Xem dịch vụ EC2
-  - Tạo và quản lý key pair
-  - Kiểm tra thông tin dịch vụ đang chạy
-  - ...
-
-- Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-- ...
+- Admin upload được ảnh sản phẩm qua S3 presigned URL, hệ thống có luồng thanh toán ZaloPay Sandbox cơ bản.
