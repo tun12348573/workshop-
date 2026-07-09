@@ -1,59 +1,30 @@
 ---
 title: "Worklog Tuần 2"
-date: 2024-01-01
+date: 2026-04-27
 weight: 1
 chapter: false
 pre: " <b> 1.2. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
 
 ### Mục tiêu tuần 2:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+- Tìm hiểu các dịch vụ AWS nền tảng dùng cho frontend, database và authentication.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
+| Thứ | Công việc                                                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                                                                                                       |
+| --- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | -------------------------------------------------------------------------------------------------------------------- |
+| 2   | - Học Amazon S3, tìm hiểu bucket, object, quyền public/private và cách S3 có thể lưu trữ file tĩnh cho website. - Học Amazon CloudFront, tìm hiểu CDN, cache, origin, behavior và cách CloudFront phân phối nội dung từ S3. | 27/04/2026   | 27/04/2026      | <https://000057.awsstudygroup.com/> <https://000057.awsstudygroup.com/7-cloudfront/7.2-configure_amazon_cloudfront/> |
+| 3   | - Học Amazon DynamoDB, tìm hiểu table, item, attribute, partition key, sort key và cách lưu dữ liệu NoSQL. - Tìm hiểu Amazon Cognito, User Pool, App Client, luồng đăng nhập và JWT token.                                  | 28/04/2026   | 28/04/2026      | <https://aws.amazon.com/vi/dynamodb/> <https://aws.amazon.com/vi/cognito/>                                           |
+| 4   | Tổng hợp vai trò của S3, CloudFront, DynamoDB và Cognito trong kiến trúc ecommerce. Xác định các dịch vụ này sẽ được dùng cho frontend, database và authentication.                                                         | 29/04/2026   | 29/04/2026      |                                                                                                                      |
+| 5   | - Nghỉ ngơi lễ ngày Giải phóng miền Nam                                                                                                                                                                                     | 30/04/2026   | 30/04/2026      |                                                                                                                      |
+| 6   | - Nghỉ ngơi lễ ngày Quốc tế lao động                                                                                                                                                                                        | 01/05/2026   | 01/05/2026      |                                                                                                                      |
 
 ### Kết quả đạt được tuần 2:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+- Hiểu được các dịch vụ nền tảng quan trọng và cách chúng kết hợp trong một hệ thống web serverless như là:
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* S3
+* CloudFront
+* DynamoDb
+* Cognito
