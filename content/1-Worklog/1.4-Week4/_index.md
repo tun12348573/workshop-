@@ -1,12 +1,12 @@
 ---
-title: "Worklog Week 4"
+title: "Week 4 Worklog"
 date: 2026-05-11
 weight: 4
 chapter: false
 pre: " <b> 1.4. </b> "
 ---
 
-### Objectives for Week 4:
+### Week 4 Objectives:
 
 - Analyze requirements and design the overall architecture for the e-commerce project.
 
