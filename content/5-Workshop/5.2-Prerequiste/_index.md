@@ -12,7 +12,7 @@ Attach the following IAM permission policy to your AWS user account to deploy an
 
 This policy grants permissions for the main services used in the **AWS Serverless E-commerce Platform** project, including CloudFormation, S3, CloudFront, Lambda, API Gateway, DynamoDB, Cognito, EventBridge, CloudWatch, SNS, SES, WAF, and IAM.
 
-````json
+```json
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -24,11 +24,7 @@ This policy grants permissions for the main services used in the **AWS Serverles
 
         "s3:CreateBucket",
         "s3:DeleteBucket",
-       AWS Serverless E-commerce Platform** project, including CloudFormation, S3, CloudFront, Lambda, API Gateway, DynamoDB, Cognito, EventBridge, CloudWatch, SNS, SES, WAF, and IAM.
-
-```json
-{
-  "Version": "2012-10 "s3:ListAllMyBuckets",
+        "s3:ListAllMyBuckets",
         "s3:ListBucket",
         "s3:GetBucketLocation",
         "s3:GetBucketPolicy",
@@ -106,11 +102,11 @@ This policy grants permissions for the main services used in the **AWS Serverles
     }
   ]
 }
-````
+```
 
 #### AWS Region used in this workshop
 
-In this workshop, the system will be deployed in the following AWS Region:
+In this workshop, we will deploy the system in the following Region:
 
 ```text
 ap-southeast-1
@@ -118,7 +114,7 @@ ap-southeast-1
 
 This Region is **Asia Pacific (Singapore)** and is suitable for users in Vietnam because it provides lower latency compared to farther Regions.
 
-Before starting, check the Region configured in AWS CLI.
+Before starting, check the Region in AWS Console and AWS CLI.
 
 ```bash
 aws configure get region
@@ -138,7 +134,7 @@ ap-southeast-1
 
 #### Check AWS account
 
-Before deployment, check the AWS account currently being used:
+Before deploying, check the AWS account currently being used:
 
 ```bash
 aws sts get-caller-identity
@@ -156,16 +152,16 @@ Expected result:
 
 If this command runs successfully, it means AWS CLI is connected to your AWS account.
 
-#### Required tools
+#### Install required tools
 
-To deploy the project, your local machine needs the following tools:
+To deploy the project, your computer needs the following tools:
 
 - **Git** to clone the source code from GitHub.
 - **Node.js** to install dependencies and build the frontend/backend.
 - **AWS CLI** to interact with AWS from the terminal.
 - **AWS SAM CLI** to build and deploy the serverless backend.
 - **Visual Studio Code** to edit the source code.
-- **GitHub account** to store source code and configure CI/CD.
+- **GitHub account** to store the source code and configure CI/CD.
 
 Check Git:
 
@@ -199,23 +195,29 @@ sam --version
 
 #### Clone the project source code
 
-Clone the source code from GitHub:
+Clone the source code from GitHub to your computer:
 
 ```bash
 git clone https://github.com/tun12348573/ecommerce-aws.git
 ```
 
-Go to the project folder:
+<img src="/workshop-/images/5-Workshop/5.2-Prerequiste/git-clone.png" alt="Git Clone Project" style="max-width: 100%; height: auto;">
+
+Move into the project folder:
 
 ```bash
 cd ecommerce-aws
 ```
+
+<img src="/workshop-/images/5-Workshop/5.2-Prerequiste/cd.png" alt="Change Directory" style="max-width: 100%; height: auto;">
 
 Open the project with Visual Studio Code:
 
 ```bash
 code .
 ```
+
+<img src="/workshop-/images/5-Workshop/5.2-Prerequiste/open.png" alt="Open Project in VS Code" style="max-width: 100%; height: auto;">
 
 #### Source code structure
 
@@ -243,14 +245,14 @@ ecommerce-aws/
 
 Where:
 
-- `backend/` contains Lambda source code, API Gateway, DynamoDB, Cognito, EventBridge, CloudWatch, and backend infrastructure resources.
+- `backend/` contains Lambda source code, API Gateway, DynamoDB, Cognito, EventBridge, CloudWatch, and backend resources.
 - `frontend/` contains the customer and admin shopping website interface.
-- `.github/workflows/` contains CI/CD workflows for automatic deployment.
-- `template.yaml` is the AWS SAM / CloudFormation template used to define backend infrastructure.
+- `.github/workflows/` contains CI/CD workflows used to automatically deploy the system.
+- `template.yaml` is the AWS SAM / CloudFormation file used to define backend infrastructure.
 
 #### Prepare backend environment variables
 
-The backend needs several environment variables for payment integration, email notification, and system configuration.
+The backend needs several environment variables for payment integration, email sending, and system configuration.
 
 Sample values:
 
@@ -305,7 +307,7 @@ Lambda
 DynamoDB Orders
 ```
 
-After backend deployment, the callback URL will look like this:
+After the backend is deployed, the callback URL will look like this:
 
 ```text
 https://your-api-id.execute-api.ap-southeast-1.amazonaws.com/prod/payment/zalopay/callback
@@ -323,45 +325,53 @@ namdao110999@gmail.com
 
 After deploying the stack, AWS will send a subscription confirmation email from SNS.
 
-Open the email and click:
+You need to open the email and click:
 
 ```text
 Confirm subscription
 ```
 
-If the subscription is not confirmed, SNS will not send alert emails.
+<img src="/workshop-/images/5-Workshop/5.2-Prerequiste/confirm-sub.png" alt="Confirm SNS Subscription" style="max-width: 100%; height: auto;">
+
+If the subscription is not confirmed, SNS will not be able to send alert emails.
 
 #### Prepare SES for transactional emails
 
-The project can use **Amazon SES** to send transactional emails, such as:
+The project can use **Amazon SES** to send transactional emails, for example:
 
 - Order confirmation email.
 - Successful payment notification email.
 - Cancelled order notification email.
 - Refund notification email.
 
-In the sandbox environment, SES requires you to verify an email address or domain before sending emails.
+In the sandbox environment, SES requires email or domain verification before sending emails.
 
 Preparation steps:
 
 - Open Amazon SES.
 - Select Region `ap-southeast-1`.
-- Verify an email address or domain.
-- Check the confirmation email from AWS.
-- Confirm the verification.
+- Go to Identities -> Create Identity.
+- In Identity type, select Email Address and enter the email address you want to use for sending emails.
+- Click Create identity.
+- Check the verification email from AWS.
+- Click the verification link.
+
+<img src="/workshop-/images/5-Workshop/5.2-Prerequiste/create-identity.png" alt="Create SES Identity" style="max-width: 100%; height: auto;">
+
+<img src="/workshop-/images/5-Workshop/5.2-Prerequiste/email-verify.png" alt="SES Email Verification" style="max-width: 100%; height: auto;">
 
 Notes:
 
-- If SES is still in sandbox mode, you can only send emails to verified email addresses.
+- If SES is still in sandbox mode, you can only send emails to verified addresses.
 - To send production emails, you need to request production access.
 - If AWS requires domain verification first, you need to complete domain verification in SES.
 
 #### Build backend with AWS SAM
 
-Go to the backend folder:
+Move into the backend folder:
 
 ```bash
-cd backend
+cd .\backend\
 ```
 
 Install dependencies:
@@ -370,9 +380,12 @@ Install dependencies:
 npm install
 ```
 
+<img src="/workshop-/images/5-Workshop/5.2-Prerequiste/npm.png" alt="Install Backend Dependencies" style="max-width: 100%; height: auto;">
+
 Build the backend:
 
 ```bash
+cd ../infrastructure
 sam build
 ```
 
@@ -382,6 +395,8 @@ Expected result:
 Build Succeeded
 ```
 
+<img src="/workshop-/images/5-Workshop/5.2-Prerequiste/sam.png" alt="SAM Build Success" style="max-width: 100%; height: auto;">
+
 #### Deploy backend with AWS SAM
 
 Deploy the backend for the first time:
@@ -389,6 +404,8 @@ Deploy the backend for the first time:
 ```bash
 sam deploy --guided
 ```
+
+<img src="/workshop-/images/5-Workshop/5.2-Prerequiste/deploy.png" alt="SAM Deploy Guided" style="max-width: 100%; height: auto;">
 
 Recommended values:
 
@@ -445,7 +462,9 @@ If the stack has been deployed before, the status may be:
 UPDATE_COMPLETE
 ```
 
-#### Get deployment outputs
+<img src="/workshop-/images/5-Workshop/5.2-Prerequiste/done.png" alt="CloudFormation Stack Complete" style="max-width: 100%; height: auto;">
+
+#### Get output information after deployment
 
 After CloudFormation deployment is complete, open the **Outputs** tab to get important information such as:
 
@@ -466,9 +485,11 @@ CloudFront URL:
 https://dfjng6e5jz4mf.cloudfront.net
 ```
 
+<img src="/workshop-/images/5-Workshop/5.2-Prerequiste/output.png" alt="CloudFormation Outputs" style="max-width: 100%; height: auto;">
+
 #### Configure frontend
 
-Go to the frontend folder:
+Move into the frontend folder:
 
 ```bash
 cd ../frontend
@@ -480,11 +501,15 @@ Install dependencies:
 npm install
 ```
 
+<img src="/workshop-/images/5-Workshop/5.2-Prerequiste/frontend-npm.png" alt="Install Frontend Dependencies" style="max-width: 100%; height: auto;">
+
 Create the frontend environment file:
 
 ```text
-frontend/.env
+frontend/.env.local
 ```
+
+<img src="/workshop-/images/5-Workshop/5.2-Prerequiste/tao-env.png" alt="Create Frontend Environment File" style="max-width: 100%; height: auto;">
 
 Sample content:
 
@@ -516,13 +541,15 @@ Run the frontend locally for testing:
 npm run dev
 ```
 
+<img src="/workshop-/images/5-Workshop/5.2-Prerequiste/run-dev.png" alt="Run Frontend Locally" style="max-width: 100%; height: auto;">
+
 Open the browser:
 
 ```text
-http://localhost:5173
+http://localhost:3000
 ```
 
-Check the following functions:
+Check the following features:
 
 - Homepage is displayed.
 - Product list is displayed.
@@ -538,6 +565,8 @@ Build the production frontend:
 ```bash
 npm run build
 ```
+
+<img src="/workshop-/images/5-Workshop/5.2-Prerequiste/frontend-build.png" alt="Frontend Build" style="max-width: 100%; height: auto;">
 
 The build output will be located in:
 
@@ -576,7 +605,7 @@ https://dfjng6e5jz4mf.cloudfront.net
 
 #### Prepare GitHub Actions CI/CD
 
-The project can use GitHub Actions to automatically deploy the system when code is pushed to the `main` branch.
+The project can use GitHub Actions to automatically deploy when code is pushed to the `main` branch.
 
 You need to prepare:
 
@@ -628,40 +657,6 @@ After deployment is complete, check the following services in AWS Console:
 - **EventBridge**: scheduled rules are enabled.
 - **CloudWatch Logs**: Lambda log groups exist.
 - **SNS**: email subscription is confirmed.
-
-#### Images to prepare for the workshop
-
-You can take screenshots of the deployment steps and save them in the following folder:
-
-```text
-static/images/5-Workshop/5.2-Prerequisite/
-```
-
-Suggested image names:
-
-```text
-iam-policy.png
-aws-configure.png
-sam-build.png
-sam-deploy-guided.png
-cloudformation-complete.png
-cloudformation-outputs.png
-s3-buckets.png
-cloudfront-distribution.png
-api-gateway.png
-lambda-functions.png
-dynamodb-tables.png
-cognito-user-pools.png
-sns-confirm-email.png
-frontend-local.png
-frontend-cloudfront.png
-```
-
-Then add images to the page like this:
-
-```md
-![CloudFormation Complete](/workshop-/images/5-Workshop/5.2-Prerequisite/cloudformation-complete.png)
-```
 
 #### Result after preparation
 
